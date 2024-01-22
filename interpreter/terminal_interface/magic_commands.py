@@ -113,7 +113,7 @@ def handle_save_message(self, json_path):
     if not json_path.endswith(".json"):
         json_path += ".json"
     with open(json_path, "w") as f:
-        json.dump(self.messages, f, indent=2)
+        json.dump(self.messages, f, ensure_ascii=False, indent=2)
 
     display_markdown_message(f"> messages json export to {os.path.abspath(json_path)}")
 
